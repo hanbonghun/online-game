@@ -15,9 +15,16 @@ public class GameRoom {
         return player1Choice != null && player2Choice != null;
     }
 
-    public void reset() {
-        player1Choice = null;
-        player2Choice = null;
-        isGameFinished = false;
+    public boolean hasPlayer(String playerId) {
+        return player1Id.equals(playerId) || player2Id.equals(playerId);
+    }
+
+    public String getOpponentId(String playerId) {
+        if (player1Id.equals(playerId)) {
+            return player2Id;
+        } else if (player2Id.equals(playerId)) {
+            return player1Id;
+        }
+        throw new IllegalArgumentException("Player not in this game room");
     }
 }
