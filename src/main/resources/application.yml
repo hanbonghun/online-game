@@ -1,5 +1,0 @@
-spring:
-  application:
-    name: online-game
-  main:
-    web-application-type: reactive
